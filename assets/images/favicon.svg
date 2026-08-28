@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title">
+  <title id="title">Omar Becerra monogram</title>
+  <rect width="64" height="64" rx="3" fill="#10242a"/>
+  <path d="M12 45c8-3 10-20 20-20s11 13 20 7" fill="none" stroke="#b9d7cd" stroke-width="2"/>
+  <circle cx="32" cy="25" r="3.5" fill="#ce5c3a"/>
+  <text x="32" y="55" fill="#edf1ec" font-family="Georgia,serif" font-size="13" text-anchor="middle">OB</text>
+</svg>

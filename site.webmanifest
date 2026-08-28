@@ -1,0 +1,16 @@
+{
+  "name": "Omar Becerra — Research",
+  "short_name": "Omar Becerra",
+  "description": "Applied mathematics and machine learning research profile.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f4f1e9",
+  "theme_color": "#10242a",
+  "icons": [
+    {
+      "src": "/assets/images/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
