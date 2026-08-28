@@ -6,7 +6,7 @@ Personal academic website for **Omar Alexis Becerra Sierra**, focused on applied
 
 ## Purpose
 
-The site presents a research-first professional identity with verifiable links to publications, ORCID, Google Scholar, a Universidad EAFIT email and repository record, and open-source work. Institutional roles are described conservatively and no formal PI title is claimed.
+The site presents a research-first professional identity with verifiable links to publications, ORCID, Google Scholar, a Universidad EAFIT email and repository record, and open-source work. Institutional descriptions are limited to verifiable public records.
 
 ## Structure
 
