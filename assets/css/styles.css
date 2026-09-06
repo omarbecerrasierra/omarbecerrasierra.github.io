@@ -663,6 +663,22 @@ html[data-theme="dark"] .moon-icon {
   background: color-mix(in srgb, var(--teal-light) 28%, var(--surface));
 }
 
+.focus-card-span {
+  grid-column: 1 / -1;
+  min-height: 0;
+  padding-bottom: 64px;
+  background: color-mix(in srgb, var(--teal-light) 28%, var(--surface));
+}
+
+.focus-card-span .focus-symbol {
+  height: 58px;
+  font-size: 2.4rem;
+}
+
+.focus-card-span p {
+  max-width: 640px;
+}
+
 .focus-number {
   display: block;
   color: var(--ink-faint);
@@ -713,7 +729,7 @@ html[data-theme="dark"] .moon-icon {
   text-transform: uppercase;
 }
 
-.leadership-note {
+.practice-note {
   display: grid;
   grid-template-columns: minmax(200px, 0.38fr) minmax(0, 0.62fr);
   gap: 50px;
@@ -722,7 +738,7 @@ html[data-theme="dark"] .moon-icon {
   border-top: 1px solid var(--line-strong);
 }
 
-.leadership-label {
+.practice-label {
   display: flex;
   align-items: flex-start;
   gap: 10px;
@@ -744,7 +760,7 @@ html[data-theme="dark"] .moon-icon {
   box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent) 14%, transparent);
 }
 
-.leadership-note h3 {
+.practice-note h3 {
   margin: 0;
   font-family: var(--serif);
   font-size: clamp(1.8rem, 3vw, 2.75rem);
@@ -753,13 +769,13 @@ html[data-theme="dark"] .moon-icon {
   letter-spacing: -0.035em;
 }
 
-.leadership-note p {
+.practice-note p {
   max-width: 730px;
   margin: 22px 0 0;
   color: var(--ink-soft);
 }
 
-.leadership-note .status-note {
+.practice-note .status-note {
   display: inline-block;
   margin-top: 25px;
   padding: 8px 11px;
@@ -1086,6 +1102,96 @@ html[data-theme="dark"] .moon-icon {
   background: color-mix(in srgb, var(--accent) 8%, var(--surface));
 }
 
+/* Engineering */
+.engineering-section {
+  background: var(--paper-deep);
+}
+
+.role-list {
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--line-strong);
+  list-style: none;
+}
+
+.role {
+  display: grid;
+  grid-template-columns: 130px minmax(0, 1fr);
+  gap: 30px;
+  padding: 46px 0 50px;
+  border-bottom: 1px solid var(--line);
+}
+
+.role-index {
+  color: var(--ink-faint);
+  font-family: var(--serif);
+  font-size: 3.6rem;
+  font-style: italic;
+  line-height: 1;
+  opacity: 0.55;
+}
+
+.role-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 5px 24px;
+}
+
+.role-meta > span {
+  color: var(--teal);
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+.role-meta > span em {
+  color: var(--ink-faint);
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  text-transform: none;
+}
+
+.role-meta time {
+  color: var(--ink-faint);
+  font-family: var(--mono);
+  font-size: 0.64rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.role h3 {
+  margin: 15px 0 0;
+  font-family: var(--serif);
+  font-size: clamp(1.75rem, 3.4vw, 2.85rem);
+  font-weight: 400;
+  line-height: 1.08;
+  letter-spacing: -0.035em;
+}
+
+.role-place {
+  margin: 9px 0 0;
+  color: var(--ink-faint);
+  font-size: 0.79rem;
+}
+
+.role-summary {
+  max-width: 760px;
+  margin: 18px 0 0;
+  color: var(--ink-soft);
+  font-size: 0.93rem;
+  line-height: 1.75;
+}
+
+.role .tag-list {
+  margin-top: 24px;
+}
+
 /* Background */
 .background-section {
   background: var(--surface);
@@ -1351,6 +1457,10 @@ html[data-theme="dark"] .moon-icon {
     min-height: 350px;
   }
 
+  .focus-card-span {
+    min-height: 0;
+  }
+
   .project-card-wide {
     grid-template-columns: 0.9fr 1.1fr;
   }
@@ -1475,7 +1585,12 @@ html[data-theme="dark"] .moon-icon {
     min-height: 320px;
   }
 
-  .publication {
+  .focus-card-span {
+    min-height: 0;
+  }
+
+  .publication,
+  .role {
     grid-template-columns: 80px 1fr;
   }
 
@@ -1585,7 +1700,7 @@ html[data-theme="dark"] .moon-icon {
     min-height: 300px;
   }
 
-  .leadership-note {
+  .practice-note {
     grid-template-columns: 1fr;
     gap: 28px;
     margin-top: 65px;
@@ -1599,6 +1714,16 @@ html[data-theme="dark"] .moon-icon {
 
   .affiliation-context {
     margin: -15px 0 35px;
+  }
+
+  .role {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    padding: 34px 0 38px;
+  }
+
+  .role-index {
+    font-size: 2.5rem;
   }
 
   .publication-index {
@@ -1713,6 +1838,7 @@ html[data-theme="dark"] .moon-icon {
 @media print {
   :root {
     --paper: #fff;
+    --paper-deep: #fff;
     --surface: #fff;
     --ink: #111;
     --ink-soft: #333;
@@ -1736,7 +1862,7 @@ html[data-theme="dark"] .moon-icon {
   .hero-grid,
   .section-heading,
   .background-grid,
-  .leadership-note {
+  .practice-note {
     display: block;
   }
 
@@ -1760,8 +1886,14 @@ html[data-theme="dark"] .moon-icon {
   }
 
   .publication,
-  .publication-list {
+  .publication-list,
+  .role,
+  .role-list {
     border-color: #bbb;
+  }
+
+  .role-summary {
+    color: #333;
   }
 
   .js [data-reveal] {
@@ -1785,6 +1917,10 @@ html[data-theme="dark"] .moon-icon {
   margin-inline: auto;
   padding: 30px 0 80px;
   flex-direction: column;
+}
+
+.error-page .brand {
+  align-self: flex-start;
 }
 
 .error-content {
