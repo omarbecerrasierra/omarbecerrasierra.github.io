@@ -35,23 +35,14 @@
     root.dataset.theme = theme;
     if (themeToggle) {
       const nextTheme = theme === "dark" ? "light" : "dark";
-      themeToggle.setAttribute("aria-label", "Switch to " + nextTheme + " theme");
-      themeToggle.setAttribute("title", "Switch to " + nextTheme + " theme");
+      themeToggle.setAttribute("aria-label", "Cambiar a tema " + (nextTheme === "dark" ? "oscuro" : "claro"));
+      themeToggle.setAttribute("title", "Cambiar a tema " + (nextTheme === "dark" ? "oscuro" : "claro"));
     }
   }
 
   const header = document.querySelector("[data-header]");
   const menuToggle = document.querySelector("[data-menu-toggle]");
   const mobileNav = document.querySelector("[data-mobile-nav]");
-
-  function updateHeader() {
-    if (header) {
-      header.classList.toggle("is-scrolled", window.scrollY > 18);
-    }
-  }
-
-  updateHeader();
-  window.addEventListener("scroll", updateHeader, { passive: true });
 
   if (menuToggle && mobileNav && header) {
     menuToggle.addEventListener("click", function () {
@@ -82,35 +73,8 @@
   function setMenuState(isOpen) {
     if (!menuToggle || !mobileNav || !header) return;
     menuToggle.setAttribute("aria-expanded", String(isOpen));
-    menuToggle.setAttribute("aria-label", isOpen ? "Close navigation" : "Open navigation");
+    menuToggle.setAttribute("aria-label", isOpen ? "Cerrar navegación" : "Abrir navegación");
     mobileNav.classList.toggle("is-open", isOpen);
-    header.classList.toggle("menu-active", isOpen);
-    document.body.classList.toggle("menu-open", isOpen);
-  }
-
-  const revealElements = document.querySelectorAll("[data-reveal]");
-  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-  if (reducedMotion || !("IntersectionObserver" in window)) {
-    revealElements.forEach(function (element) {
-      element.classList.add("is-visible");
-    });
-  } else {
-    const revealObserver = new IntersectionObserver(
-      function (entries, observer) {
-        entries.forEach(function (entry) {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("is-visible");
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { rootMargin: "0px 0px -8%", threshold: 0.08 }
-    );
-
-    revealElements.forEach(function (element) {
-      revealObserver.observe(element);
-    });
   }
 
   const navLinks = document.querySelectorAll('.desktop-nav a[href^="#"]');
@@ -148,10 +112,4 @@
     element.textContent = String(new Date().getFullYear());
   });
 
-  const portrait = document.querySelector(".portrait-wrap img");
-  if (portrait) {
-    portrait.addEventListener("error", function () {
-      portrait.hidden = true;
-    });
-  }
 })();

@@ -1,65 +1,44 @@
-# Omar Becerra Sierra — Professional Portfolio
+# Omar Becerra Sierra — Perfil profesional
 
-Personal website for **Omar Alexis Becerra Sierra**: Senior Data Engineer working on Azure Databricks Lakehouse platforms for Latin American financial services, and an independent researcher in robust nonparametric statistics and spatial analysis.
+Sitio personal en español de Omar Alexis Becerra Sierra: ingeniería de datos e investigación independiente en estadística robusta y análisis espacial.
 
-**LinkedIn:** [omarbecerrasierra](https://www.linkedin.com/in/omarbecerrasierra)
+## Desarrollo local
 
-**Live site:** [omarbecerrasierra.github.io](https://omarbecerrasierra.github.io)
+Sitio estático sin dependencias ni compilación. Ejecuta `python3 -m http.server 8000` y abre `http://localhost:8000`.
 
-## Purpose
+- `index.html`: perfil, experiencia, investigación, publicaciones, proyectos y formación.
+- `assets/css/styles.css`: diseño adaptable, temas claro y oscuro e impresión.
+- `assets/js/main.js`: navegación y preferencias de tema.
+- `assets/cv/HVOmarEspanol.pdf`: CV actualizado en español aportado por el propietario.
+- `404.html`: página de error en español.
 
-The site pairs production engineering experience with peer-reviewed research, linking to publications, ORCID, Google Scholar, and open-source work.
+## Criterios de contenido
 
-Every institutional statement is limited to what a public record supports. The independent research practice claims no current institutional affiliation, appointment, or position: Universidad EAFIT appears as `alumniOf` in the structured data in the education timeline, and as a past consulting employer, and publication affiliations are explicitly labelled as the information printed in each article at the time of publication.
+El CV actualizado y el sitio sitúan BIKY.ai entre febrero de 2022 y febrero de 2025, y el enfoque en servicios financieros desde 2025. Los títulos de publicaciones y nombres de productos conservan su idioma original.
 
-Client names for staffing engagements are deliberately withheld; roles describe the client's sector instead. Research described as applied to citizen security phenomena names no data-providing entity, and the site publishes no maps, figures, or microdata derived from that work.
+Se retiraron las cuatro certificaciones anteriores por falta de año de emisión y URL individual verificable. AWS Certified Data Engineer tampoco se publica: no figura en el CV actualizado ni hay evidencia de verificación en el repositorio. Para incorporar una sección de insignias, aportar para cada credencial el nombre exacto, año de emisión y enlace individual de Credly o Microsoft Learn. No usar enlaces genéricos como prueba de certificación.
 
-## Structure
+El sitio y la descarga principal están en español por indicación del propietario. No se genera una versión inglesa del CV en esta revisión.
 
-```text
-.
-├── index.html                 # Main profile: research, engineering, publications
-├── 404.html                   # GitHub Pages error page
-├── assets/
-│   ├── cv/HVOmarEspanol.pdf    # Spanish CV, downloadable from hero and Engineering
-│   ├── css/styles.css         # Responsive design, themes, and print styles
-│   ├── images/favicon.svg     # Site identity mark
-│   └── js/main.js             # Theme, navigation, and progressive motion
-├── robots.txt                 # Search crawler rules
-├── sitemap.xml                # Search index map
-├── site.webmanifest           # Browser/app metadata
-└── .nojekyll                  # Serve the static files directly
-```
+La investigación se presenta como independiente, sin atribuir una afiliación institucional actual. No se publican nombres de clientes de consultoría ni microdatos de seguridad ciudadana.
 
-## Publishing
+GitHub Pages sirve los archivos del repositorio. Mantener los DOI y perfiles académicos al actualizar contenido, y actualizar `sitemap.xml` después de cambios relevantes.
 
-GitHub Pages publishes the repository directly from the `main` branch. No build process or third-party package is required.
+## SEO y rendimiento
 
-To preview locally:
+- Título y descripción específicos, URL canónica, idioma español y encabezados por tema.
+- Datos estructurados `ProfilePage` y `Person`, con identidad y perfiles académicos coherentes con el contenido visible.
+- Metadatos Open Graph y Twitter con `assets/images/social-preview.png` (1200 × 630). Esta imagen se usa al compartir el enlace; no se descarga como parte del contenido de la página.
+- `robots.txt` permite el rastreo y declara `sitemap.xml`; la página 404 conserva `noindex`.
+- HTML estático: el contenido y la navegación son accesibles sin JavaScript. CSS y JavaScript locales, fuentes del sistema, sin bibliotecas, analítica ni solicitudes a terceros durante la carga.
+- Se eliminó `site.webmanifest`: este perfil no necesita instalación como aplicación. También se retiró JavaScript sin uso para animaciones, retrato y seguimiento del desplazamiento del encabezado.
 
-```bash
-python3 -m http.server 8000
-```
+Se conservan `404.html`, `.nojekyll`, `robots.txt`, `sitemap.xml`, el favicon y el CV porque cumplen funciones de publicación, navegación o búsqueda. No se necesitan dependencias, carpetas de compilación ni archivos minificados duplicados.
 
-Then open `http://localhost:8000`.
+### Verificación
 
-## Updating content
+Comprobación local en Chrome a 320, 390, 768 y 1440 píxeles: sin desbordamiento horizontal, menú móvil funcional, persistencia del tema y navegación sin JavaScript. Validación de enlaces internos, recursos HTTP, sintaxis JavaScript, XML y JSON-LD. Estas comprobaciones no equivalen a una medición de Core Web Vitals en producción.
 
-- Edit research, publications, projects, engineering roles, and profile links in `index.html`.
-- Keep DOI and institutional links as the source of truth.
-- Update the `lastmod` date in `sitemap.xml` after material changes.
-- Do not add a `CNAME` file unless a custom domain is intentionally restored.
+Después de publicar, verificar la URL en Google Search Console y enviar el sitemap desde una cuenta con acceso a la propiedad. La configuración local no garantiza indexación ni una posición específica en resultados.
 
-## Technical principles
-
-- Semantic HTML and keyboard-accessible navigation
-- Responsive layout with light and dark themes
-- Reduced-motion and print support
-- Structured person metadata (schema.org `Person`) for search engines and AI agents
-- No analytics, cookies, frameworks, or external font dependencies
-
-## Follow-up
-
-- Keep `assets/cv/HVOmarEspanol.pdf` up to date with the site's roles and dates. The hero and Engineering section link directly to this Spanish CV.
-- Add MMA to LinkedIn Projects: **Geospatial deep learning · Remote sensing**. Repository: https://github.com/omarbecerrasierra/MMA. Technologies: PyTorch, U-Net, Remote sensing, Satellite imagery, Semantic segmentation.
-- Future work: an open-data geospatial case study, a methodological note on spatial privacy, and a Spanish version of the site.
+Referencias: [Guía SEO de Google](https://developers.google.com/search/docs/fundamentals/seo-starter-guide) y [datos estructurados de perfiles](https://developers.google.com/search/docs/appearance/structured-data/profile-page).
