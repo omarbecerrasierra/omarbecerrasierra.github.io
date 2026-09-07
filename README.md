@@ -4,7 +4,7 @@ Sitio personal en español de Omar Alexis Becerra Sierra: ingeniería de datos e
 
 ## Desarrollo local
 
-Sitio estático sin dependencias ni compilación. Ejecuta `python3 -m http.server 8000` y abre `http://localhost:8000`.
+Sitio estático sin dependencias ni compilación. Ejecuta `python3 scripts/preview.py` y abre `http://localhost:8000`.
 
 - `index.html`: perfil, experiencia, investigación, publicaciones, proyectos y formación.
 - `assets/css/styles.css`: diseño adaptable, temas claro y oscuro e impresión.
@@ -42,3 +42,5 @@ Comprobación local en Chrome a 320, 390, 768 y 1440 píxeles: sin desbordamient
 Después de publicar, verificar la URL en Google Search Console y enviar el sitemap desde una cuenta con acceso a la propiedad. La configuración local no garantiza indexación ni una posición específica en resultados.
 
 Referencias: [Guía SEO de Google](https://developers.google.com/search/docs/fundamentals/seo-starter-guide) y [datos estructurados de perfiles](https://developers.google.com/search/docs/appearance/structured-data/profile-page).
+
+La vista previa sirve siempre esta carpeta y desactiva la caché. Mantener la terminal abierta; detener con Ctrl+C. Si el puerto está ocupado, usar `python3 scripts/preview.py --port 8001`. Al cambiar CSS o JavaScript, actualizar su parámetro `?v=` en el HTML para renovar la caché de los navegadores.
